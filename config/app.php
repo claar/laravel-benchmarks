@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', str_repeat(1, 32) /* my luggage code */),
 
     'cipher' => 'AES-256-CBC',
 
@@ -144,6 +144,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
     ],
 
     /*
@@ -181,7 +182,7 @@ return [
         'Password'  => Illuminate\Support\Facades\Password::class,
         'Queue'     => Illuminate\Support\Facades\Queue::class,
         'Redirect'  => Illuminate\Support\Facades\Redirect::class,
-        'Redis'     => Illuminate\Support\Facades\Redis::class,
+        'LaravelRedis' => Illuminate\Support\Facades\Redis::class,
         'Request'   => Illuminate\Support\Facades\Request::class,
         'Response'  => Illuminate\Support\Facades\Response::class,
         'Route'     => Illuminate\Support\Facades\Route::class,
